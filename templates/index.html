@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora Confusa</title>
+</head>
+
+<body>
+    <h2>Calculadora Confusa</h2>
+
+    <form method="POST">
+        <input type="number" name="num1" step="any" required placeholder="Número 1">
+        <input type="number" name="num2" step="any" required placeholder="Número 2">
+        <button type="submit">Calcular</button>
+    </form>
+
+    <!-- Jinja2 muestra el resultado si Python se lo envía -->
+    {% if resultado is not none %}
+    <h3>Resultado: {{ resultado }}</h3>
+    {% endif %}
+</body>
+
+</html>
