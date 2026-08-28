@@ -1,0 +1,6 @@
+2026-08-28 11:36:20,090 - __main__ - INFO - Iniciando aplicación Calculadora Confusa
+2026-08-28 11:36:20,199 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-28 11:36:20,199 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-08-28 11:36:31,766 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 11:36:31] "GET / HTTP/1.1" 200 -
+2026-08-28 11:36:32,050 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 11:36:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
