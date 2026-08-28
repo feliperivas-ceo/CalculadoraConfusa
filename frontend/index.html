@@ -435,12 +435,12 @@
                 <p>Fraccionarios, Multi-Operación & Historial (HU1-5)</p>
             </header>
 
-            <form method="POST" action="/">
+            <form id="calculator-form">
                 <!-- First Number -->
                 <div class="input-group">
                     <label for="num1">Operando A</label>
                     <div class="input-wrapper">
-                        <input type="text" id="num1" name="num1" required placeholder="Ej: 1/2, 0.75 o 5" value="{{ num1 }}">
+                        <input type="text" id="num1" name="num1" required placeholder="Ej: 1/2, 0.75 o 5">
                     </div>
                     <div class="helper-text">Soporta enteros, decimales y fracciones.</div>
                 </div>
@@ -450,19 +450,19 @@
                     <label>Operación</label>
                     <div class="operation-container">
                         <div class="operation-option">
-                            <input type="radio" id="op-sum" name="operacion" value="suma" {% if operacion == 'suma' or not operacion %}checked{% endif %}>
+                            <input type="radio" id="op-sum" name="operacion" value="suma" checked>
                             <label for="op-sum" class="operation-label">+<span>Suma</span></label>
                         </div>
                         <div class="operation-option">
-                            <input type="radio" id="op-sub" name="operacion" value="resta" {% if operacion == 'resta' %}checked{% endif %}>
+                            <input type="radio" id="op-sub" name="operacion" value="resta">
                             <label for="op-sub" class="operation-label">−<span>Resta</span></label>
                         </div>
                         <div class="operation-option">
-                            <input type="radio" id="op-mul" name="operacion" value="multiplica" {% if operacion == 'multiplica' %}checked{% endif %}>
+                            <input type="radio" id="op-mul" name="operacion" value="multiplica">
                             <label for="op-mul" class="operation-label">×<span>Mult</span></label>
                         </div>
                         <div class="operation-option">
-                            <input type="radio" id="op-div" name="operacion" value="divide" {% if operacion == 'divide' %}checked{% endif %}>
+                            <input type="radio" id="op-div" name="operacion" value="divide">
                             <label for="op-div" class="operation-label">÷<span>Div</span></label>
                         </div>
                     </div>
@@ -472,7 +472,7 @@
                 <div class="input-group">
                     <label for="num2">Operando B</label>
                     <div class="input-wrapper">
-                        <input type="text" id="num2" name="num2" required placeholder="Ej: 3/4, 1.5 o 2" value="{{ num2 }}">
+                        <input type="text" id="num2" name="num2" required placeholder="Ej: 3/4, 1.5 o 2">
                     </div>
                     <div class="helper-text">Soporta enteros, decimales y fracciones. ⚠️ En división: B ≠ 0</div>
                 </div>
@@ -481,44 +481,22 @@
             </form>
 
             <!-- Error Display -->
-            {% if error %}
-            <div class="error-box">
-                ⚠️ {{ error }}
+            <div class="error-box" id="error-box" hidden>
+                ⚠️ <span id="error-message"></span>
             </div>
-            {% endif %}
 
             <!-- Result Display -->
-            {% if resultado is not none and not error %}
-            <div class="result-box">
+            <div class="result-box" id="result-box" hidden>
                 <div class="result-label">✓ Resultado</div>
-                <div class="result-value">{{ resultado }}</div>
+                <div class="result-value" id="result-value"></div>
             </div>
-            {% endif %}
         </div>
 
         <!-- Historial Card (HU3) -->
-        {% if historial %}
-        <div class="historial-card">
+        <div class="historial-card" id="history-card" hidden>
             <h2>📋 Últimas Operaciones</h2>
-            <div class="historial-list">
-                {% for item in historial %}
-                <div class="historial-item">
-                    <div>
-                        <div class="historial-operation">
-                            {{ item.num1 }} {{ item.operacion }} {{ item.num2 }}
-                        </div>
-                        <div class="historial-expression">
-                            = <strong>{{ item.resultado }}</strong>
-                        </div>
-                        <div class="historial-timestamp">
-                            {{ item.timestamp }}
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
+            <div class="historial-list" id="history-list"></div>
         </div>
-        {% endif %}
 
         <footer>
             Facultad de Ingeniería, Diseño y Ciencias Aplicadas — ICESI<br>
@@ -527,6 +505,66 @@
 
     </div>
 
+    <script src="/config.js"></script>
+    <script>
+        const backendUrl = window.BACKEND_URL || "http://127.0.0.1:5000";
+        const form = document.getElementById("calculator-form");
+        const errorBox = document.getElementById("error-box");
+        const errorMessage = document.getElementById("error-message");
+        const resultBox = document.getElementById("result-box");
+        const resultValue = document.getElementById("result-value");
+        const historyCard = document.getElementById("history-card");
+        const historyList = document.getElementById("history-list");
+
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorBox.hidden = false;
+            resultBox.hidden = true;
+        }
+
+        function renderHistory(items) {
+            historyList.replaceChildren();
+            historyCard.hidden = items.length === 0;
+            items.forEach((item) => {
+                const element = document.createElement("div");
+                element.className = "historial-item";
+                element.innerHTML = `<div><div class="historial-operation">${item.num1} ${item.operacion} ${item.num2}</div><div class="historial-expression">= <strong>${item.resultado}</strong></div><div class="historial-timestamp">${item.timestamp}</div></div>`;
+                historyList.appendChild(element);
+            });
+        }
+
+        async function loadHistory() {
+            const response = await fetch(`${backendUrl}/historial`);
+            const data = await response.json();
+            renderHistory(data.historial || []);
+        }
+
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            errorBox.hidden = true;
+            const payload = {
+                num1: document.getElementById("num1").value,
+                num2: document.getElementById("num2").value
+            };
+            const operation = document.querySelector("input[name='operacion']:checked").value;
+            try {
+                const response = await fetch(`${backendUrl}/${operation}`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+                const data = await response.json();
+                if (!response.ok) throw new Error(data.error || "No fue posible calcular");
+                resultValue.textContent = data.resultado_formateado;
+                resultBox.hidden = false;
+                await loadHistory();
+            } catch (error) {
+                showError(error.message);
+            }
+        });
+
+        loadHistory().catch(() => showError("No fue posible conectar con el backend"));
+    </script>
 </body>
 
 </html>

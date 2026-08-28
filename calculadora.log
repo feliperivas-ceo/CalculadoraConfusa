@@ -1,6 +1,196 @@
-2026-08-28 11:36:20,090 - __main__ - INFO - Iniciando aplicaci�n Calculadora Confusa
-2026-08-28 11:36:20,199 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2026-08-28 12:10:14,651 - __main__ - INFO - Iniciando aplicaci�n Calculadora Confusa
+2026-08-28 12:10:14,676 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
-2026-08-28 11:36:20,199 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
-2026-08-28 11:36:31,766 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 11:36:31] "GET / HTTP/1.1" 200 -
-2026-08-28 11:36:32,050 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 11:36:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-08-28 12:10:14,683 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-08-28 12:10:35,251 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 12:10:35] "GET / HTTP/1.1" 200 -
+2026-08-28 12:10:43,988 - __main__ - INFO - Historial guardado: 1 operaciones
+2026-08-28 12:10:43,988 - __main__ - INFO - Operaci�n registrada: suma(1, 5) = 6
+2026-08-28 12:10:44,001 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 12:10:44] "POST / HTTP/1.1" 200 -
+2026-08-28 12:15:44,118 - calculadora - INFO - Health check ejecutado
+2026-08-28 12:15:44,118 - calculadora - INFO - Historial guardado: 2 operaciones
+2026-08-28 12:15:44,118 - calculadora - INFO - Operaci�n registrada: suma(1/2, 3/4) = 5/4 (1.25)
+2026-08-28 12:15:44,118 - calculadora - ERROR - Intento de divisi�n por cero: 5 / 0
+2026-08-28 12:16:17,623 - calculadora - INFO - Health check ejecutado
+2026-08-28 12:16:17,627 - calculadora - INFO - Historial guardado: 3 operaciones
+2026-08-28 12:16:17,627 - calculadora - INFO - Operaci�n registrada: suma(1/2, 3/4) = 5/4 (1.25)
+2026-08-28 12:16:17,627 - calculadora - ERROR - Intento de divisi�n por cero: 5 / 0
+2026-08-28 17:19:36,239 - __main__ - INFO - Iniciando aplicación Calculadora Confusa
+2026-08-28 17:19:36,252 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-08-28 17:19:36,253 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-08-28 17:19:40,411 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:19:40,412 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:19:40] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:20:10,525 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:20:10,526 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:20:10] "GET /health HTTP/1.1" 200 -
+2026-08-28 12:20:12,395 - __main__ - INFO - Health check ejecutado
+2026-08-28 12:20:12,401 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 12:20:12] "GET /health HTTP/1.1" 200 -
+2026-08-28 12:20:35,354 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 12:20:35] "GET / HTTP/1.1" 200 -
+2026-08-28 12:20:37,423 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 12:20:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-08-28 17:20:40,649 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:20:40,650 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:20:40] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:21:10,748 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:21:10,749 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:21:10] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:21:40,856 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:21:40,857 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:21:40] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:22:10,948 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:22:10,949 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:22:10] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:22:41,119 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:22:41,122 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:22:41] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:23:11,317 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:23:11,319 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:23:11] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:23:41,458 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:23:41,459 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:23:41] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:24:11,557 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:24:11,558 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:24:11] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:24:41,663 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:24:41,684 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:24:41] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:25:11,814 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:25:11,819 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:25:11] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:25:28,129 - __main__ - INFO - Iniciando aplicación Calculadora Confusa
+2026-08-28 17:25:28,155 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.0.2:5000
+2026-08-28 17:25:28,165 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-08-28 17:25:31,328 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:25:31,329 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:25:31] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:25:37,466 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:25:37,469 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:25:37] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:26:01,467 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:26:01,468 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:26:01] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:26:31,563 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:26:31,564 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:26:31] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:27:01,657 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:27:01,658 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:27:01] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:27:31,745 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:27:31,746 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:27:31] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:27:33,374 - __main__ - INFO - Iniciando aplicación Calculadora Confusa
+2026-08-28 17:27:33,381 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.0.2:5000
+2026-08-28 17:27:33,381 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-08-28 17:27:34,561 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:27:34,562 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:27:34] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:27:34,756 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:27:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-08-28 17:27:37,899 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:27:37,901 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:27:37] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:28:08,009 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:28:08,010 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:28:08] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:28:38,091 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:28:38,092 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:28:38] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:29:08,182 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:29:08,183 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:29:08] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:29:39,334 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:29:39,341 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:29:39] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:30:09,707 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:30:09,763 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:30:09] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:30:39,893 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:30:39,894 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:30:39] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:31:10,003 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:31:10,004 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:31:10] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:31:40,139 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:31:40,140 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:31:40] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:32:10,289 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:32:10,290 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:32:10] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:32:40,432 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:32:40,434 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:32:40] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:33:10,525 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:33:10,526 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:33:10] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:33:26,538 - __main__ - INFO - Historial consultado: 0 operaciones
+2026-08-28 17:33:26,541 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:33:26] "GET /historial HTTP/1.1" 200 -
+2026-08-28 17:33:40,632 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:33:40,633 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:33:40] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:33:46,625 - __main__ - INFO - Historial consultado: 0 operaciones
+2026-08-28 17:33:46,626 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:33:46] "GET /historial HTTP/1.1" 200 -
+2026-08-28 17:34:10,730 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:34:10,731 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:34:10] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:34:40,824 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:34:40,825 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:34:40] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:35:10,934 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:35:10,936 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:35:10] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:35:30,768 - __main__ - INFO - Historial consultado: 0 operaciones
+2026-08-28 17:35:30,769 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:35:30] "GET /historial HTTP/1.1" 200 -
+2026-08-28 17:35:41,029 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:35:41,030 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:35:41] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:36:11,139 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:36:11,140 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:36:11] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:36:20,718 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:36:20] "OPTIONS /resta HTTP/1.1" 200 -
+2026-08-28 17:36:20,749 - __main__ - INFO - Historial guardado: 1 operaciones
+2026-08-28 17:36:20,749 - __main__ - INFO - Operación registrada: resta(1234, 1233) = 1
+2026-08-28 17:36:20,752 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:36:20] "POST /resta HTTP/1.1" 200 -
+2026-08-28 17:36:20,768 - __main__ - INFO - Historial consultado: 1 operaciones
+2026-08-28 17:36:20,770 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:36:20] "GET /historial HTTP/1.1" 200 -
+2026-08-28 17:36:26,637 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:36:26] "OPTIONS /suma HTTP/1.1" 200 -
+2026-08-28 17:36:26,653 - __main__ - INFO - Historial guardado: 2 operaciones
+2026-08-28 17:36:26,653 - __main__ - INFO - Operación registrada: suma(1234, 1233) = 2467
+2026-08-28 17:36:26,654 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:36:26] "POST /suma HTTP/1.1" 200 -
+2026-08-28 17:36:26,671 - __main__ - INFO - Historial consultado: 2 operaciones
+2026-08-28 17:36:26,672 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:36:26] "GET /historial HTTP/1.1" 200 -
+2026-08-28 17:36:34,521 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:36:34] "OPTIONS /multiplica HTTP/1.1" 200 -
+2026-08-28 17:36:34,540 - __main__ - INFO - Historial guardado: 3 operaciones
+2026-08-28 17:36:34,541 - __main__ - INFO - Operación registrada: multiplica(1234, 1233) = 1521522
+2026-08-28 17:36:34,542 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:36:34] "POST /multiplica HTTP/1.1" 200 -
+2026-08-28 17:36:34,556 - __main__ - INFO - Historial consultado: 3 operaciones
+2026-08-28 17:36:34,558 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:36:34] "GET /historial HTTP/1.1" 200 -
+2026-08-28 17:36:37,121 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:36:37] "OPTIONS /divide HTTP/1.1" 200 -
+2026-08-28 17:36:37,138 - __main__ - INFO - Historial guardado: 4 operaciones
+2026-08-28 17:36:37,138 - __main__ - INFO - Operación registrada: divide(1234, 1233) = 1234/1233 (1.0008110300081103)
+2026-08-28 17:36:37,139 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:36:37] "POST /divide HTTP/1.1" 200 -
+2026-08-28 17:36:37,151 - __main__ - INFO - Historial consultado: 4 operaciones
+2026-08-28 17:36:37,152 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:36:37] "GET /historial HTTP/1.1" 200 -
+2026-08-28 17:36:41,235 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:36:41,236 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:36:41] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:36:56,690 - __main__ - INFO - Historial consultado: 4 operaciones
+2026-08-28 17:36:56,691 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:36:56] "GET /historial HTTP/1.1" 200 -
+2026-08-28 17:36:57,769 - __main__ - INFO - Historial consultado: 4 operaciones
+2026-08-28 17:36:57,770 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:36:57] "GET /historial HTTP/1.1" 200 -
+2026-08-28 17:37:05,932 - __main__ - INFO - Historial consultado: 4 operaciones
+2026-08-28 17:37:05,933 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:37:05] "GET /historial HTTP/1.1" 200 -
+2026-08-28 17:37:11,325 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:37:11,325 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:37:11] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:37:27,210 - werkzeug - ERROR - 172.20.0.1 - - [28/Aug/2026 17:37:27] code 400, message Bad request version ('\x02Ós[kmo\x93¥n¦£Bf#ÚØ')
+2026-08-28 17:37:27,211 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:37:27] "[31m[1m\x16\x03\x01\x06Æ\x01\x00\x06Â\x03\x03\x7f\x10\x11ì\x9bôB~©´6«\x88ú\x12\x1cÇÂ\x1dH\x176Âr\x97ïr¨¤'Ñ· \x18dïµ­ÉZ\x8d0\x07Ê|µî!\x11Ô©qN\x0d\x03¢÷×ô)Ø\x7f\x1eÝí\x00 \x8a\x8a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06Yúú\x00\x00\x00\x1b\x00\x03\x02\x00\x02\x00\x17\x00\x00\x00-\x00\x02\x01\x01\x00\x0d\x00\x18\x00\x16\x09\x04\x09\x05\x09\x06\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x003\x04ï\x04íªª\x00\x01\x00\x11ì\x04ÀÅRmc«\x12Âüb\x8a\x17´É´)\x82é\x9fÖ\x97\x97=z\x16l\x11\x13Õ\x17\x07Ç\x17-\\l8_çÍTë\x1e}Á\x1e\x1c³+k`©\x8bk¤nìSð\x89ÆoÀ#]\x16·B3+è0¸n\x90\x99¯\x09\x9a 5$\x06\x94Æ«TL\x82êu\x9b\x1a\x18Ïc*\x9e5húµ\x9bÍ¨ISY"a\x96\x81\x92\x18°\x99q(\x0eg@è%MÜûR\x19Ö"Xis¬\x0cÃj030÷s¬0\x1a\x99Á\x1eDxO¨\x09w*z$¯çÏ?æ"\x1eD\x85¬t\x92ìwÎÔYg®X\x15Õ\x01\x14#R\x9eh4}Kõ\x18:\x1b<\x03\x10o´;¹V\x90\x1d¦\x16¯]\x19#\x86lluò\x15\x93\x1b\x98¡)N\x07W\x8b-3\x8aÃ&\x89\x16\x82bB\x04\x00Ö\x93É9¶Ç(æ¡K\x13WO\x94Vè5\x81\x1b\x98HG\x91Gu\x01V2k\x18<ª\x1aIL\x9bPe\x1c´7 ~(\x92¤"£ß"sÚ\x01q]B\x1d%S\x01=%\x0c²ÐN\x18\x8c<1¡Ídz KD&|ð]³§\x9e¢ü³Òª¤á\x0b²ö\x98\x06\x85ô³M§@³ð¿YÚ\x8c\x09ãÉw¸\x06a\x17k[\x0cWî\x19Hz\x15+³{\x81îq¦\x1e\x13\x98RÉ\x07\x81\x17\x91ð\x1bÃå¼J è4Þ\x96¢\x0c\x89\x06\x92¥,\x8c\x04Èa\x07¤=\x06!Ì\x9cU§\x12Ì\x12Ð?¡\x02-ö\x93\x19°7Èîñm¸\x17Ê|U\x0bÔ+\x11º3vJ³KäÛ{ÐÌ0\x04\x84\x84\x1f\x03\x9391\x8cÊv\x02\x8aÌUcuS\x07B&Ëô?\x15ÒW\x1aªqÅà°\x0c\x99[\x91ÊDkrÇÆ\x10e3\x88~b W§¹ÁR!A³krrô\x0bI©\x04ìÑÏêeÉ5òr]&]Z×\x99ÝÖÁRc\x19oP15ô\x98\x19ói\x11r\x02ß\x01zxûÁþÃÁ³¬»P3\x97ÇÃ\x18\x9b\x10V\x1f\x06\x11\x09¸\x02þvÁv#\x1cë\x09\x95\x8c0L©ë*7ÙÆF´6\x03\x0cM\x8543z \x11j"4¡A\x9aw[w\x7fQ\x85\x87C¯H\x16¨µk\x19"\x99[\x8fE~ôWcÿvZ»\x09|\x88Ö\x1d\x02Ós[kmo\x93¥n¦£Bf#ÚØ[0m" 400 -
+2026-08-28 17:37:27,218 - werkzeug - ERROR - 172.20.0.1 - - [28/Aug/2026 17:37:27] code 400, message Bad request version ('\x03{\x04ä¹\x9b7\x12#v>Ó¢')
+2026-08-28 17:37:27,219 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:37:27] "[31m[1m\x16\x03\x01\x07\x06\x01\x00\x07\x02\x03\x03°Lz×´¼ UM\x99}!ðòÀÅèWpT\x89¡&Gc\x0e|\x0e\x16\x90\x1bÜ \x1d³ó\x06Ò\x10\x12ëQ\x9cÙmÊµ®³\x84ÎªÒ£¥·Â¡SÐ?Ü\x95;\x1c\x00 ZZ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06\x99ÚÚ\x00\x00\x00-\x00\x02\x01\x01\x00\x1b\x00\x03\x02\x00\x02þ\x0d\x01\x1a\x00\x00\x01\x00\x01ù\x00 b½ (tÛR¤KÁçó-Ýîñ<*+\x12\x15¯K¹?\x96\x09\x9fä"½\x1c\x00ðU\x15ò¾êùûK\x9f\x9f\x1bFÔ\\³ B8ó\x82ÖÞ\x7f\x02âFÙR\\ØCÁÇ\x13Jãð\\W+\x0b4×\x96÷¼q\x96\x94}ÌÎ\x10]».«Ánº\x8f&E»±ñ¹¹ªàª>èøó$³ß\x9b%#*URÌ\x7fC7êP\x03ÿ\x0b\x99\x99fà&V\x1a#{Uè\x10ê?í\x92\x8f\x08\x9b±5»ö¨Êâ\x81Á\x18±q¤;\x8eM¼*`TòÈ\x85\x86:­|À\x9bßÓu­\x9f\x1d,\x88\x00Õ©ó¤1\x184ûØ\x9eÌ\x94zë\x82ç¸\x18÷\x91\x01\x9abí\x8a/\x8c¾\x7f[\x00%iïì(îÞ;ëû\x94þÖHaC1\x15Á¹} \x7f+Ý\x9fDJ\x03»\x0c·§ÿaÊÏ½\x8cîO\x04¹þú[ç¬T`ÖuMÀ\x17¡+;­\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\x17\x00\x00ÿ\x01\x00\x01\x00\x003\x04ï\x04í::\x00\x01\x00\x11ì\x04À\x00°8n\x94ÍÛIGü\x9ct[\x00E1\x1cc\x8e\x80\x09Û¬\x82\x10\x11&Dø²&à\x17y8M|\x13¬¾{Ã\x02«­\x00q*\x00@!\x9fh]õS\x8e:è5\x08g\x0f¥e\x18ßYcÄyo\x8cD\x7fðà¾~ÅÈ%Æx=81Vì8LÆTÀ6\x81\x7f²y_Ã±\x98V2¿\x8b\x02!±¿á\x94\x0d%dB¢p¶\x0cûT\x8eÑÃaä»a2º»ñ\x8f®ø.û©\x0fíóDOÌ\x99o%\x9d¢Uº,s%\x88 ¡z¢Z\x07HTd{\x01\x1b\x966°b'7#A\x19H\x01\x93j%óak\x8f\x82b\x7f|KÕ1\x99Ä3|×¡sÁ²Í¤%/}k¢T\x97\x03!\x86\x13Gd\x9e÷ë2Mjh\x1bg\x15ñ9¹\x09V¨×$\x8c¸\x94*Üy!F\x9b\x89\x8b¡\x95\x86,µ·ó1Öu=þ{c½\\R\x1c\x03{\x04ä¹\x9b7\x12#v>Ó¢[0m" 400 -
+2026-08-28 17:37:28,951 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:37:28] "[33mGET / HTTP/1.1[0m" 404 -
+2026-08-28 17:37:29,042 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:37:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-08-28 17:37:33,052 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:37:33] "[33mGET / HTTP/1.1[0m" 404 -
+2026-08-28 17:37:41,426 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:37:41,427 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:37:41] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:38:11,552 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:38:11,553 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:38:11] "GET /health HTTP/1.1" 200 -
+2026-08-28 12:38:25,758 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 12:38:25] "GET / HTTP/1.1" 200 -
+2026-08-28 17:38:26,663 - __main__ - INFO - Iniciando aplicación Calculadora Confusa
+2026-08-28 17:38:26,683 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.0.2:5000
+2026-08-28 17:38:26,684 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-08-28 17:38:30,420 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:38:30,421 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:38:30] "GET /health HTTP/1.1" 200 -
+2026-08-28 12:38:32,683 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 12:38:32] "GET / HTTP/1.1" 200 -
+2026-08-28 12:38:39,688 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 12:38:39] "GET / HTTP/1.1" 200 -
+2026-08-28 17:38:57,789 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:38:57] "GET / HTTP/1.1" 200 -
+2026-08-28 17:39:00,827 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:39:00,828 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:39:00] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:39:19,771 - __main__ - INFO - Historial consultado: 4 operaciones
+2026-08-28 17:39:19,772 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:39:19] "GET /historial HTTP/1.1" 200 -
+2026-08-28 17:39:30,981 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:39:30,982 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:39:30] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:39:46,578 - __main__ - INFO - Historial consultado: 4 operaciones
+2026-08-28 17:39:46,581 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:39:46] "GET /historial HTTP/1.1" 200 -
+2026-08-28 17:39:53,311 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:39:53] "OPTIONS /suma HTTP/1.1" 200 -
+2026-08-28 17:39:53,326 - __main__ - INFO - Historial guardado: 5 operaciones
+2026-08-28 17:39:53,327 - __main__ - INFO - Operación registrada: suma(1111, 1111) = 2222
+2026-08-28 17:39:53,328 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:39:53] "POST /suma HTTP/1.1" 200 -
+2026-08-28 17:39:53,346 - __main__ - INFO - Historial consultado: 5 operaciones
+2026-08-28 17:39:53,347 - werkzeug - INFO - 172.20.0.1 - - [28/Aug/2026 17:39:53] "GET /historial HTTP/1.1" 200 -
+2026-08-28 17:40:01,078 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:40:01,078 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:40:01] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:40:31,244 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:40:31,244 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:40:31] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:41:01,355 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:41:01,357 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:41:01] "GET /health HTTP/1.1" 200 -
+2026-08-28 17:41:31,496 - __main__ - INFO - Health check ejecutado
+2026-08-28 17:41:31,498 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2026 17:41:31] "GET /health HTTP/1.1" 200 -

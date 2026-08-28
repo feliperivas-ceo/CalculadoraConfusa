@@ -43,23 +43,30 @@ Esta es una aplicación web educativa que implementa **todas las Historias de Us
 
 ```
 CalculadoraConfusa/
-├── calculadora.py              # Backend Flask (HU1-HU5)
-├── requirements.txt            # Dependencias Python
+├── backend/
+│   ├── calculadora.py          # Backend Flask (HU1-HU5)
+│   ├── requirements.txt        # Dependencias Python
+│   └── test_calculadora.py     # Pruebas de endpoints
 ├── historial.json             # Persistencia de operaciones
 ├── calculadora.log            # Log de operaciones
-├── templates/
-│   └── index.html             # Frontend interactivo
-├── deploy.sh                  # Script automático (Linux/macOS)
-├── deploy.ps1                 # Script automático (Windows)
-├── firewall-config.sh         # Config firewall (Linux/macOS)
-├── firewall-config.ps1        # Config firewall (Windows)
+├── frontend/
+│   ├── index.html              # Frontend interactivo
+│   ├── Dockerfile              # Imagen Nginx
+│   ├── nginx.conf              # Servidor de archivos estáticos
+│   └── entrypoint.sh           # Configuración de URL del backend
+├── scripts/
+│   ├── test_endpoints.sh       # Pruebas para CI
+│   └── deploy.sh               # Despliegue remoto por SSH
+├── docker-compose.yml          # Orquestación de ambos servicios
+├── .github/workflows/ci.yml   # Pipeline de integración continua
+├── .dockerignore               # Contexto de build mínimo
 ├── HU.md                      # Especificación del taller
 └── README.md                  # Este archivo
 ```
 
 ## 🚀 Guía de Despliegue
 
-### Fase 1: Despliegue Manual (Silos Tradicionales)
+### Ejecución local
 
 #### 1. Preparar el Entorno
 
@@ -74,18 +81,46 @@ source .venv/bin/activate
 .\.venv\Scripts\Activate.ps1
 
 # Instalar dependencias
-pip install -r requirements.txt
+pip install -r backend/requirements.txt
 ```
 
-#### 2. Ejecutar la Aplicación
+#### 2. Ejecutar el backend
 
 ```bash
-python calculadora.py
+python backend/calculadora.py
 ```
 
 La aplicación estará disponible en:
-- **Frontend:** http://127.0.0.1:5000
+- **Backend:** http://127.0.0.1:5000
 - **APIs REST:** http://127.0.0.1:5000/suma, /resta, /multiplica, /divide
+
+Para levantar los dos contenedores de forma conjunta:
+
+```bash
+docker compose up -d --build
+```
+
+- **Frontend:** http://127.0.0.1:8080
+- **Backend:** http://127.0.0.1:5000
+
+La URL que usará el frontend puede cambiarse con `BACKEND_URL`:
+
+```bash
+BACKEND_URL=http://192.168.1.20:5000 docker compose up -d --build
+```
+
+Para ejecutar el backend en una PC y el frontend en otra, levanta primero el backend
+en la PC servidora. El backend escucha en la red local mediante `FLASK_HOST=0.0.0.0`.
+Después, desde la PC del frontend, despliega únicamente su contenedor por SSH:
+
+```bash
+FRONTEND_HOST=192.168.131.37 \
+FRONTEND_USER=usuario_ssh \
+BACKEND_URL=http://192.168.131.192:5000 \
+bash scripts/deploy-frontend.sh
+```
+
+El frontend remoto quedará disponible en `http://192.168.131.37:8080`.
 
 #### 3. Pruebas de Endpoints
 
@@ -130,37 +165,27 @@ curl http://127.0.0.1:5000/status
 
 ---
 
-### Fase 2: Automatización DevOps (Equipos Integrados)
+### Integración continua y despliegue SSH
 
-#### Paso 1: Despliegue Automático (Primeros 15 minutos)
+El workflow [ci.yml](.github/workflows/ci.yml) construye ambas imágenes y ejecuta las pruebas de endpoints en cada `push` o `pull_request` hacia `main`.
+
+Para desplegar en el equipo asignado, configure una llave SSH y ejecute en Linux/macOS:
 
 **En Linux/macOS:**
 ```bash
-bash deploy.sh
-source .venv/bin/activate
-python calculadora.py
+DEPLOY_HOST=192.168.1.30 DEPLOY_USER=estudiante bash scripts/deploy.sh
 ```
 
-**En Windows PowerShell:**
+En Windows PowerShell, use el script equivalente:
+
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\deploy.ps1
-.\.venv\Scripts\Activate.ps1
-python calculadora.py
+.\scripts\deploy-frontend.ps1 `
+  -FrontendHost 192.168.131.37 `
+  -FrontendUser swarch `
+  -BackendUrl http://192.168.131.192:5000
 ```
 
-#### Paso 2: Configurar Firewall (Primeros 15 minutos)
-
-**En Linux/macOS (requiere sudo):**
-```bash
-sudo bash firewall-config.sh
-```
-
-**En Windows PowerShell (requiere administrador):**
-```powershell
-powershell -ExecutionPolicy Bypass -RunAs Administrator -File .\firewall-config.ps1
-```
-
-#### Paso 3: Validación Cruzada entre Servidores
+El destino debe tener Docker y Docker Compose instalados. Para la validación cruzada:
 
 En la PC del **Frontend**, accede al Backend del servidor Ops:
 ```bash
@@ -242,8 +267,8 @@ pip install flask-cors
 ## 📚 Recursos Educativos
 
 - **HU.md:** Especificación completa del taller y objetivos de aprendizaje
-- **Backend (calculadora.py):** Implementación de APIs REST, manejo de errores, logging
-- **Frontend (templates/index.html):** UI responsivo, manejo de formularios
+- **Backend (backend/calculadora.py):** Implementación de APIs REST, manejo de errores, logging
+- **Frontend (frontend/index.html):** UI responsiva, manejo de formularios
 - **Scripts:** Automatización de despliegue, gestión de firewall
 
 ---

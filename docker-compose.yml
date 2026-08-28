@@ -1,18 +1,16 @@
-# docker-compose.yml - Orquestación con Docker Compose (Bonus)
-# Uso: docker-compose up
-
-version: '3.8'
-
 services:
-  # Backend - Calculadora
   backend:
-    build: .
-    container_name: calculadora-backend
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: calc-backend
     ports:
       - "5000:5000"
     environment:
       FLASK_ENV: production
-      FLASK_APP: calculadora.py
+      FLASK_APP: backend/calculadora.py
+      FLASK_HOST: 0.0.0.0
+      HISTORIAL_FILE: /app/data/historial.json
     volumes:
       - ./data:/app/data
       - ./calculadora.log:/app/calculadora.log
@@ -23,6 +21,21 @@ services:
       retries: 3
       start_period: 5s
     restart: unless-stopped
+    networks:
+      - calculadora-net
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+      args:
+        BACKEND_URL: ${BACKEND_URL:-http://localhost:5000}
+    container_name: calc-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      backend:
+        condition: service_healthy
     networks:
       - calculadora-net
 

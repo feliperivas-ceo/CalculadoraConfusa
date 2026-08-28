@@ -1,0 +1,23 @@
+[
+  {
+    "timestamp": "2026-08-28T12:16:17.623113",
+    "num1": "1/2",
+    "num2": "3/4",
+    "operacion": "suma",
+    "resultado": "5/4 (1.25)"
+  },
+  {
+    "timestamp": "2026-08-28T12:15:44.118057",
+    "num1": "1/2",
+    "num2": "3/4",
+    "operacion": "suma",
+    "resultado": "5/4 (1.25)"
+  },
+  {
+    "timestamp": "2026-08-28T12:10:43.985949",
+    "num1": "1",
+    "num2": "5",
+    "operacion": "suma",
+    "resultado": "6"
+  }
+]

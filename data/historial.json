@@ -1,0 +1,37 @@
+[
+  {
+    "timestamp": "2026-08-28T17:39:53.321613",
+    "num1": "1111",
+    "num2": "1111",
+    "operacion": "suma",
+    "resultado": "2222"
+  },
+  {
+    "timestamp": "2026-08-28T17:36:37.134549",
+    "num1": "1234",
+    "num2": "1233",
+    "operacion": "divide",
+    "resultado": "1234/1233 (1.0008110300081103)"
+  },
+  {
+    "timestamp": "2026-08-28T17:36:34.536226",
+    "num1": "1234",
+    "num2": "1233",
+    "operacion": "multiplica",
+    "resultado": "1521522"
+  },
+  {
+    "timestamp": "2026-08-28T17:36:26.648805",
+    "num1": "1234",
+    "num2": "1233",
+    "operacion": "suma",
+    "resultado": "2467"
+  },
+  {
+    "timestamp": "2026-08-28T17:36:20.737761",
+    "num1": "1234",
+    "num2": "1233",
+    "operacion": "resta",
+    "resultado": "1"
+  }
+]

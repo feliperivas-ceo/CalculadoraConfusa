@@ -5,7 +5,7 @@ test_calculadora.py - Suite de pruebas automatizadas para Calculadora Confusa
 Objetivo: Validar todas las HUs (HU1-HU5) funcionan correctamente
 
 Uso:
-  python test_calculadora.py
+    python backend/test_calculadora.py
   
 Requisitos:
   pip install requests
@@ -46,13 +46,13 @@ def test_connection():
     """Verificar conexión con backend"""
     print_header("HU0: Verificar Conexión")
     try:
-        response = requests.get(f"{BASE_URL}/", timeout=TIMEOUT)
+        response = requests.get(f"{BASE_URL}/health", timeout=TIMEOUT)
         print_success(f"Servidor respondiendo en {BASE_URL}")
         print(f"  Status Code: {response.status_code}")
         return True
     except requests.exceptions.ConnectionError:
         print_error(f"No se puede conectar a {BASE_URL}")
-        print("  Asegúrate de que la aplicación está corriendo: python calculadora.py")
+        print("  Asegúrate de que la aplicación está corriendo: python backend/calculadora.py")
         return False
     except Exception as e:
         print_error(f"Error inesperado: {e}")

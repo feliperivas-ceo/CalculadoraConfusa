@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 from fractions import Fraction
 import json
@@ -22,9 +22,19 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Constants
-HISTORIAL_FILE = "historial.json"
+HISTORIAL_FILE = os.getenv("HISTORIAL_FILE", "historial.json")
 MAX_HISTORIAL = 5
 START_TIME = time.time()
+
+@app.route("/", methods=["GET"])
+def backend_info():
+    """Informa que este proceso corresponde al servicio backend."""
+    return jsonify({
+        "service": "Calculadora Backend",
+        "status": "operational",
+        "frontend": "http://192.168.131.37:8080",
+        "health": "/health",
+    })
 
 def load_historial():
     """Carga el historial de operaciones desde archivo JSON."""
@@ -253,58 +263,10 @@ def status_endpoint():
         logger.error(f"Error en status endpoint: {e}")
         return jsonify({"status": "error", "error": str(e)}), 500
 
-# ============ UI Controller Route ============
-
-@app.route("/", methods=["GET", "POST"])
-def calcular():
-    """Interfaz web interactiva"""
-    resultado = None
-    historial = load_historial()
-    num1_raw = ""
-    num2_raw = ""
-    operacion = "suma"
-    error = None
-    
-    if request.method == "POST":
-        num1_raw = request.form.get("num1", "").strip()
-        num2_raw = request.form.get("num2", "").strip()
-        operacion = request.form.get("operacion", "suma")
-        
-        try:
-            n1 = parse_fraction(num1_raw)
-            n2 = parse_fraction(num2_raw)
-            
-            if operacion == "suma":
-                res = n1 + n2
-            elif operacion == "resta":
-                res = n1 - n2
-            elif operacion == "multiplica":
-                res = n1 * n2
-            elif operacion == "divide":
-                if n2 == 0:
-                    raise ValueError("Error: División por cero no permitida")
-                res = n1 / n2
-            else:
-                raise ValueError("Operación no soportada")
-            
-            resultado = format_result(res)
-            add_to_historial(num1_raw, num2_raw, operacion, resultado)
-            historial = load_historial()
-            
-        except ValueError as e:
-            error = str(e)
-            logger.warning(f"Error en UI: {error}")
-    
-    return render_template(
-        "index.html",
-        resultado=resultado,
-        error=error,
-        num1=num1_raw,
-        num2=num2_raw,
-        operacion=operacion,
-        historial=historial
-    )
-
 if __name__ == "__main__":
     logger.info("Iniciando aplicación Calculadora Confusa")
-    app.run(host="127.0.0.1", port=5000, debug=False)
+    app.run(
+        host=os.getenv("FLASK_HOST", "0.0.0.0"),
+        port=int(os.getenv("FLASK_PORT", "5000")),
+        debug=False,
+    )

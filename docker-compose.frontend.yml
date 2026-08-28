@@ -1,0 +1,10 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+      args:
+        BACKEND_URL: ${BACKEND_URL:?Define BACKEND_URL con la IP del backend}
+    container_name: calc-frontend
+    ports:
+      - "8080:80"
